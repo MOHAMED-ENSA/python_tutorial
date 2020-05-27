@@ -1,0 +1,1 @@
+print("this file contain informations about ex handling in python")
