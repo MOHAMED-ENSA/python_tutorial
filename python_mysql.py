@@ -145,20 +145,95 @@
 
 # select from a table : 
 
-import mysql.connector
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  passwd="12345",
-  database="db2"
-)
+# import mysql.connector
+# mydb = mysql.connector.connect(
+#   host="localhost",
+#   user="root",
+#   passwd="12345",
+#   database="db2"
+# )
 
-mycursor = mydb.cursor()
-mycursor.execute("SELECt * FROM students")
-for x in mycursor : 
-  print(x)
+# mycursor = mydb.cursor()
+# mycursor.execute("SELECt * FROM students")
+# for x in mycursor : 
+#   print(x)
 
+# import mysql.connector
+# mydb = mysql.connector.connect(
+#   host="localhost",
+#   user="root",
+#   passwd="12345",
+#   database="db2"
+# )
 
+# mycursor = mydb.cursor()
+# mycursor.execute("SELECt id,name FROM students")
+# for x in mycursor : 
+#   print(x)
+# use fetchone method 
+# import mysql.connector
+# mydb = mysql.connector.connect(
+#   host="localhost",
+#   user="root",
+#   passwd="12345",
+#   database="db2"
+# )
+
+# mycursor = mydb.cursor()
+# mycursor.execute("SELECt * FROM students")
+# res = mycursor.fetchone()
+# print(res)
+
+# write a function which print specific rows 
+
+# import mysql.connector
+# mydb = mysql.connector.connect(
+#   host="localhost",
+#   user="root",
+#   passwd="12345",
+#   database="db2"
+# )
+
+# mycursor = mydb.cursor()
+# def printSpeceficRows(min,max) :
+#   mycursor.execute("SELECt id,name FROM students")
+#   a = 0 
+#   while  a < max   : 
+#      res = mycursor.fetchone()
+#      a += 1
+#      if a >= min and a <= max :
+#          print(res) 
+
+# printSpeceficRows(3,7)
+
+# where / fetch all : 
+# import mysql.connector as mc 
+# mybd = mc.connect(
+#   host="localhost" , 
+#   user = "root" , 
+#   passwd = "12345", 
+#   database = "db2"
+# )
+# mycursor = mybd.cursor() 
+# ids = (1,2,3,4,5,6)
+
+# mycursor.execute(f'SELECT CNE FROM students WHERE id in {ids} and name = "Mohamed" ')
+# res = mycursor.fetchall()
+# print(res)
+
+# using where whith regular expretion 
+# import mysql.connector as mc 
+# mybd = mc.connect(
+#   host="localhost" , 
+#   user = "root" , 
+#   passwd = "12345", 
+#   database = "db2"
+# )
+# mycursor = mybd.cursor() 
+
+# mycursor.execute('SELECT * FROM students WHERE class LIKE "%G%"  ')
+# res = mycursor.fetchall()
+# print(res)
 
 
 

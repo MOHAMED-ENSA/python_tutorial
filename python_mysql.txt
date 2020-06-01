@@ -20,4 +20,25 @@ primary key : we add the following feature :
          multiple values isnertion  
          mycursor.execute(sql,values)
     to get the id of the row added : mycursor.lastrowid
---> select from a table 
+--> select from a table :
+-select all : 
+select * from tbname 
+for x in mycursor : 
+  print x 
+-select specific column : 
+select clname1,clname2,... from tbname 
+for x in mycursor : 
+  print x 
+-select specific rows : 
+we use fetchone method 
+mycursor.execute("select * from tbname ")
+res = mycursor.fetchone()
+print(res)
+note : fetchone return only the first row , so for 
+any chosing row/rows we need to create a new 
+function for doing these task 
+--> where statement / fetchall : selection with condition 
+mycursor.excecute (select * from tbname where conditions) 
+res = mycursor.fetchall()
+print res 
+
