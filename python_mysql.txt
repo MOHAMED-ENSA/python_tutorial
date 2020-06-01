@@ -1,0 +1,23 @@
+--> dealing with a database : 
+create : create database dbname  
+show databases : show all databases in our server
+                  for x in mycursor 
+                     print x  
+--> dealing with tables : 
+each database can contain one table or more 
+create : create table tbname(features)
+show  : show tables 
+        for x in mycursor 
+            print x
+primary key : we add the following feature : 
+               id INT AUTO_INCREMENT PRIMARY KEY 
+  if the table is already exists , we use the following  syntax : 
+        alter table tbname add column id INT AUTO_INCREMENT PRIMARY KEY
+--> fill a table  : 
+         sql = "insert into tbname (col1,col2...) values (%s,%s,...)"
+         values = (val1,val2,val3) 
+         or [(val1,val2,...),(val1,val2,...),(val1,val2,...),...] for 
+         multiple values isnertion  
+         mycursor.execute(sql,values)
+    to get the id of the row added : mycursor.lastrowid
+--> select from a table 
