@@ -235,6 +235,49 @@
 # res = mycursor.fetchall()
 # print(res)
 
+# insert using oop : 
+# from oop import students 
+# import mysql.connector as mc
+# print("-" * 40) 
+# std1 = students("Kamal",1314247688,"GIND4")
 
+
+# mydb = mc.connect(
+#     host ="localhost",
+#     user = "root",
+#     passwd ="12345",
+#     database = "db2"
+# )
+# mycursor = mydb.cursor()
+# mycursor.execute("INSERT INTO students (name,CNE,class) VALUES (%s,%s,%s)",(std1.name,std1.CNE,std1.Class))
+# mydb.commit()
+# print("%s recrods added",mycursor.rowcount)
+# create table + oop 
+
+# from oop import students 
+# import mysql.connector as mc
+# std1 = students("Houda",1314446878,"GC4")
+# std2 = students("Souad",1314544448,"GE3")
+# std3 = students("Soufian",1344464688,"GSEIR5")
+# std4 = students("Sara",1314122688,"GI3")
+# print("-" * 40) 
+# mydb = mc.connect(
+#     host ="localhost",
+#     user = "root",
+#     passwd ="12345",
+#     database = "mydb2"
+# )
+# mycursor = mydb.cursor()
+#mycursor.execute("CREATE TABLE students (id INT ,name VARCHAR(255),CNE INT,Class VARCHAR(255))")
+# info = [(std1.id,std1.name,std1.CNE,std1.Class),
+#         (std2.id,std2.name,std2.CNE,std2.Class) 
+#          ]
+# print(info)
+# sql = "INSERT INTO students (id,name,CNE,Class) VALUES (%s,%s,%s,%s)"
+# mycursor.executemany(sql,info)
+# mydb.commit()
+# print(mycursor.rowcount , " recrods added")
+
+# order by : 
 
 

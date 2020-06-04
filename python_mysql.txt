@@ -18,7 +18,7 @@ primary key : we add the following feature :
          values = (val1,val2,val3) 
          or [(val1,val2,...),(val1,val2,...),(val1,val2,...),...] for 
          multiple values isnertion  
-         mycursor.execute(sql,values)
+         mycursor.executemany(sql,values)
     to get the id of the row added : mycursor.lastrowid
 --> select from a table :
 -select all : 
@@ -41,4 +41,7 @@ function for doing these task
 mycursor.excecute (select * from tbname where conditions) 
 res = mycursor.fetchall()
 print res 
+--> order by : 
+
+
 
