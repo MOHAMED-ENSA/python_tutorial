@@ -26,10 +26,23 @@ class students :
 # acces modifiers : public /  protected / private 
 
 class humain : 
+    #Class attributs
+    numberOfInstace = 0
+    #Class  methods :
+    @classmethod 
+    def dateOfBirth (cls , age) :
+        dtb = 2020 - age  
+        return dtb 
+    # static method  : 
+    @staticmethod 
+    def printHello() : 
+        print("hello world ")
+
     def __init__ (self, name = "no name",age = 0 ,sex = "male" ) : # pour pouvoir utiliser le constructeur sans arg il faut avoir une val par defaut pour chaque argument
         self.name = name # public 
         self._age = age  # protected
         self.__sex = sex  # private 
+        humain.numberOfInstace += 1 
     def getName(self) : 
         return self.name 
     def getAge(self) : 
@@ -42,10 +55,23 @@ class humain :
         self._age  = age 
     def setSex(self, sex) : 
         self.__sex  = sex
-    def disp () : 
-        print("name : {getName()} \n age : {getAge} \n sex : {getSex}") 
+    # destory an object : 
+    def __del__(self) :  
+        class_name = self.__class__.__name__
+        print(class_name , "destroyed")
+    # __str__ : return humain readableb value of the object(to string in java) 
+    def __str__ (self) : 
+        return f" name : {self.getName()} \n age : {self.getAge()} \n sex : {self.getSex()}"
+    
 
-humain1 = humain(name = 'ahmed')    # we can use dictionary for changing the default value
+# print(humain.numberOfInstace)
+# humain1 = humain(name = 'ahmed')    # we can use dictionary for changing the default value
+# humain2 = humain() 
+# humain3 = humain()
+# humain1.deleteInstance()
+# print(humain.numberOfInstace)
+#print(humain.dateOfBirth(23))
+
 #print(humain1.name)
 #humain1.setAge(22) 
 #humain1.setName('Allal')
@@ -55,8 +81,8 @@ humain1 = humain(name = 'ahmed')    # we can use dictionary for changing the def
 #print(humain1.__sex) # not gonna work because it's private
 #print(humain1._humain__sex) # this gonna work 
 
-# inheritence : 
-
+#   2.        inheritence : 
+# note : a child class can extends from multiple parents 
 # class teacher(humain) : # c'est pas obligatoire de cree init constractor pour la class fille 
 #     def __init__ (self,etab = "S",school = "UMP" ) : 
 #          self.etab = etab  
@@ -81,8 +107,17 @@ humain1 = humain(name = 'ahmed')    # we can use dictionary for changing the def
 # polymorphisme 
 
 # pass an object in parametre : a : className
+# we can pass any class extends from className
 
 
 
+# name = str("Mohamed")
+# print(name.__class__.__dict__.keys) 
+# print(dir(str)) 
 
+# humain1 = humain(name = 'ali' , sex = "male", age = 34 )
+# print("before" , humain1)
+# del humain1 
+# print("after" , humain1)
 
+# to use any build_in methods you have to overload it in the object's class
