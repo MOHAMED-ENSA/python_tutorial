@@ -165,8 +165,61 @@ from tkinter import ttk
 
 # 7 : frame
 
-root = Tk()
+# root = Tk()
+# root.title("Frames")
+# f1 = ttk.Frame(root)
+# f1.pack()
+# f1.config(width =200 , height = 200 , relief =RIDGE)
+# f2 = ttk.Frame(root)
+# f2.config(width =200 , height = 200 , relief =RIDGE)
+# f2.pack()
+# btn1 = ttk.Button(f1, text = "click me")
+# btn1.pack()
+# btn2 = ttk.Button(f1, text = "click me")
+# btn2.pack()
+# btn3 = ttk.Button(f2, text = "click me")
+# btn3.pack()
+# btn4 = ttk.Button(f2, text = "click me")
+# btn4.pack()
+# style = ttk.Style()
+# #style.configure("TButton" , background = "red" , foreground = 'green', font = ('arial' , 30 , 'bold'))
+# style.configure("x.TButton" , background = "red" , foreground = 'green', font = ('arial' , 30 , 'bold'))
+# btn1.config(style = 'x.TButton')
+
+# frames as grid
+
+# f1 = ttk.Frame(root )
+# f1.grid(row = 0 , column = 0 )
+# f1.configure(width = 200 , height = 200 , relief = RIDGE)
+# f2 = ttk.Frame(root )
+# f2.grid(row = 0 , column = 1 )
+# f2.configure(width = 200 , height = 200 , relief = RIDGE )
+# f3 = ttk.Frame(root )
+# f3.grid(row = 1 , column = 0 )
+# f3.configure(width = 200 , height = 200 ,  relief = RIDGE)
+# f4 = ttk.Frame(root )
+# f4.grid(row = 1 , column = 1 )
+# f4.configure(width = 200 , height = 200 , relief = RIDGE )
+# f5 = ttk.LabelFrame(root , width = 100 , height = 100 , text= 'login ').grid(row = 2 , columnspan = 2 )
+
+# radio , checkbox :
+root = Tk() 
+cb = ttk.Checkbutton(root , text = "teenager")
+cb.pack()
+cbVariable = StringVar()
+cb.config(variable = cbVariable , onvalue = 'teen', offvalue = 'adult')
+rad1 = ttk.Radiobutton(root, text ='male')
+rad1.pack()
+rad1Var = StringVar()
+rad1.config(variable = rad1Var , value = "male")
+rad2 = ttk.Radiobutton(root, text ='female')
+rad2.pack()
+rad2Var = StringVar()
+rad2.config(variable = rad2Var , value = "female")
+print(rad1Var.get())
+print(rad2Var.get())
 
 
+rad2Var = StringVar()
 
 root.mainloop()
