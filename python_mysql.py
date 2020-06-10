@@ -278,6 +278,117 @@
 # mydb.commit()
 # print(mycursor.rowcount , " recrods added")
 
-# order by : 
+# order by + select  : 
+# import mysql.connector as mc 
+# mydb = mc.connect(
+#     host = 'localhost' , 
+#     user = "root" , 
+#     passwd = "12345" , 
+#     database = 'db2'
+# )
+# mycursor = mydb.cursor() 
+# # mycursor.execute("SELECT * FROM students ORDER BY name") 
+# mycursor.execute("SELECT * FROM students ORDER BY name DESC") 
+# res = mycursor.fetchall()
+# for x in res : 
+#     print(x)
+# delete
+# import mysql.connector as mc 
+# mydb = mc.connect(
+#     host = 'localhost' , 
+#     user = "root" , 
+#     passwd = "12345" , 
+#     database = 'db2'
+# )
+# mycursor = mydb.cursor() 
+# mycursor.execute("DELETE FROM students WHERE CNE = 1513859103 ")
+# mydb.commit()
+# print(mycursor.rowcount, "records deleted")
+# import mysql.connector as mc 
+# mydb = mc.connect(
+#     host = 'localhost' , 
+#     user = "root" , 
+#     passwd = "12345" , 
+#     database = 'db2'
+# )
+# mycursor = mydb.cursor() 
+# mycursor.execute("DELETE FROM students WHERE class = 'GTR4' ")
+# mydb.commit()
+# print(mycursor.rowcount, "records deleted")
 
+# drop (delete)  table
+# import mysql.connector as mc 
+# mydb = mc.connect(
+#     host = 'localhost' , 
+#     user = "root" , 
+#     passwd = "12345" , 
+#     database = 'db2'
+# )
+# mycursor = mydb.cursor() 
+# mycursor.execute("DROP TABLE admin")
+# delete it if exists (not show me error if the table is not exists)
+# import mysql.connector as mc 
+# mydb = mc.connect(
+#     host = 'localhost' , 
+#     user = "root" , 
+#     passwd = "12345" , 
+#     database = 'db2'
+# )
+# mycursor = mydb.cursor() 
+# mycursor.execute("DROP TABLE IF EXISTS admin")
+
+# update  :
+# import mysql.connector as mc 
+# mydb = mc.connect(
+#     host = 'localhost' , 
+#     user = "root" , 
+#     passwd = "12345" , 
+#     database = 'db2'
+# )
+# mycursor = mydb.cursor() 
+# mycursor.execute("UPDATE students SET CNE = 1513859103 WHERE id = 3") 
+# mydb.commit() 
+# print(mycursor.rowcount , " rows changed ! ")
+
+# limit  : controler l'affichage des lignes 
+# import mysql.connector as mc 
+# mydb = mc.connect(
+#     host = 'localhost' , 
+#     user = "root" , 
+#     passwd = "12345" , 
+#     database = 'db2'
+# )
+# mycursor = mydb.cursor() 
+# mycursor.execute("SELECT * FROM students LIMIT 3 ") 
+# res = mycursor.fetchall() 
+# for i in res : 
+#     print(i)
+# choix de ligne de départ  
+# import mysql.connector as mc 
+# mydb = mc.connect(
+#     host = 'localhost' , 
+#     user = "root" , 
+#     passwd = "12345" , 
+#     database = 'db2'
+# )
+# mycursor = mydb.cursor() 
+# mycursor.execute("SELECT * FROM students LIMIT 3 OFFSET 1 ") 
+# res = mycursor.fetchall() 
+# for i in res : 
+#     print(i)
+
+# join : 
+
+import mysql.connector as mc 
+mydb = mc.connect(
+    host = 'localhost' , 
+    user = "root" , 
+    passwd = "12345" , 
+    database = 'db2'
+)
+mycursor = mydb.cursor() 
+mycursor.execute("SELECT * FROM students LIMIT 3 ") 
+res = mycursor.fetchall() 
+for i in res : 
+    print(i)
 
