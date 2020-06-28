@@ -1,7 +1,7 @@
 from tkinter import * 
 from tkinter import ttk
 # 1 
-#root = Tk() # creation de la fenaitre
+# root = Tk() # creation de la fenaitre
 # btn = ttk.Button(root,text ='click me!') # creation de button
 # btn.pack() # position de la button
 # def btnOnClick():  # event 
@@ -216,8 +216,8 @@ rad2 = ttk.Radiobutton(root, text ='female')
 rad2.pack()
 rad2Var = StringVar()
 rad2.config(variable = rad2Var , value = "female")
-print(rad1Var.get())
-print(rad2Var.get())
+#print(rad1Var.get())
+#print(rad2Var.get())
 
 
 rad2Var = StringVar()

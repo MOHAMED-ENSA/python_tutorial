@@ -378,17 +378,22 @@
 #     print(i)
 
 # join : 
+print('-' * 50) 
 
-import mysql.connector as mc 
+import mysql.connector as mc
 mydb = mc.connect(
     host = 'localhost' , 
     user = "root" , 
     passwd = "12345" , 
-    database = 'db2'
+    database = 'etudiant'
 )
-mycursor = mydb.cursor() 
-mycursor.execute("SELECT * FROM students LIMIT 3 ") 
-res = mycursor.fetchall() 
-for i in res : 
-    print(i)
+def selecton() :
+    mycursor = mydb.cursor() 
+    mycursor.execute("SELECT * from etudiant") 
+    res = mycursor.fetchone()
+    print (res)
+selecton()
+
+#
+print('-' * 50) 
 
