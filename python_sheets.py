@@ -4,9 +4,11 @@ from oauth2client.service_account import ServiceAccountCredentials
 scope = ['https://www.googleapis.com/auth/spreadsheets', "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name('credential.json',scope)
 client = gspread.authorize(creds)
-sheets = client.open('python_sheet').sheet1
+sheets = client.open('login').sheet1
 #1 print all data
 #data = sheets.get_all_records()
+data = sheets.get_all_values()
+print(data , type(data) , len(data))
 #print (data[0]["CNE"])
 #2 get the specific row values
 #row = sheets.row_values(1)
