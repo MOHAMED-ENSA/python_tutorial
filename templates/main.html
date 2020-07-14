@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
 {% block body %}
-hi I'm mohamed
+<h1>skills head </h1>
+<p> hello from main </p>
+{% for skill in mydata %}
+<div>{{ skill[0] }} | {{ skill[1] }}</div>
+   
+{% endfor %}
 {% endblock %}
